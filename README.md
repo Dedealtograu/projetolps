@@ -1,3 +1,6 @@
+# Projeto para o curso Curso de React.Js e Next.Js
+Criado por Luiz Otávio Miranda e Tales Calogi Malaquias.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
