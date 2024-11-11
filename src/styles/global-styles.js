@@ -7,8 +7,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    ${({ theme }) => `
-      background: ${theme.colors.mainBg};
-    `}
+
   }
 `

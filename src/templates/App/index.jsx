@@ -1,11 +1,11 @@
-import * as Styledd from './styles.js'
+import { Wrapper } from './styles.js'
 
 function Home() {
   return (
     <div className="App">
-      <Styledd.Wrapper>
+      <Wrapper>
         <h1>Hello</h1>
-      </Styledd.Wrapper>
+      </Wrapper>
     </div>
   )
 }
