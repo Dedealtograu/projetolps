@@ -2,7 +2,6 @@ import { NavLinks } from '.'
 import { screen } from '@testing-library/react'
 import { renderTheme } from '../../styles/render-theme'
 import mock from './mock'
-import { theme } from '../../styles/theme'
 
 describe('<NavLinks />', () => {
   it('should render links', () => {
