@@ -4,7 +4,7 @@ export default {
   title: 'Footer',
   component: Footer,
   args: {
-    html: `
+    footerHtlm: `
       <p><a href="#">Feito com ❤ por Dedealtograu </a></p>
     `,
   },

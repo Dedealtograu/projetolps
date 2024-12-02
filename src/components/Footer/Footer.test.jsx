@@ -4,7 +4,7 @@ import { renderTheme } from '../../styles/render-theme'
 
 describe('<Footer />', () => {
   it('should render Footer', () => {
-    const { container } = renderTheme(<Footer html={'<h1>Ola</h1>'} />)
+    const { container } = renderTheme(<Footer footerHtlm={'<h1>Ola</h1>'} />)
 
     expect(screen.getByRole('heading')).toBeInTheDocument()
 
