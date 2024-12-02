@@ -8,6 +8,6 @@ describe('<Footer />', () => {
 
     expect(screen.getByRole('heading')).toBeInTheDocument()
 
-    expect(container).toMatchInlineSnapshot()
+    expect(container).toMatchSnapshot()
   })
 })

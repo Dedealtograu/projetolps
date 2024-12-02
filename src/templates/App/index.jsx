@@ -1,13 +1,8 @@
-import { Wrapper } from './styles.js'
+import { Base } from '../Base'
+import { mockBase } from '../Base/mock'
 
 function Home() {
-  return (
-    <div className="App">
-      <Wrapper>
-        <h1>Hello</h1>
-      </Wrapper>
-    </div>
-  )
+  return <Base {...mockBase} />
 }
 
 export default Home
