@@ -7,7 +7,7 @@ describe('<MenuLink />', () => {
     renderTheme(<MenuLink>children</MenuLink>)
   })
 
-  it('should render MenuLink', () => {
+  it('should render MenuLink with children', () => {
     renderTheme(<MenuLink>children</MenuLink>)
 
     expect(screen.getByText('children')).toBeInTheDocument()

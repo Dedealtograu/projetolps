@@ -1,4 +1,4 @@
-import { mapSectionTwoColumns, mapSectionGrid, mapSectionContent } from './map-sections'
+import { mapSectionTwoColumns, mapSectionGrid, mapSectionContent, mapImageGrid } from './map-sections'
 
 describe('mapSections', () => {
   it('should map sections two columns', () => {
@@ -96,7 +96,7 @@ describe('mapSections', () => {
       },
     })
 
-    expect(data.component).toBe('section.section-grid')
+    expect(data.component).toBe('section.section-grid-text')
     expect(data.title).toBe('My Grid')
     expect(data.description).toBe('Uma breve descrição')
     expect(data.background).toBe(true)
@@ -105,13 +105,144 @@ describe('mapSections', () => {
     expect(data.grid[0].description).toBe('abc.')
   })
 
-  it('sshould map sections grid', () => {
+  it('should map sections grid', () => {
     const data = mapSectionGrid(undefined)
 
-    expect(data.component).toBe('')
+    expect(data.component).toBe('section.section-grid-text')
     expect(data.title).toBe('')
     expect(data.description).toBe('')
     expect(data.background).toBe(false)
     expect(data.sectionId).toBe('')
+  })
+
+  it('should map image grid', () => {
+    const data = mapImageGrid(undefined)
+
+    expect(data.component).toBe('section.section-grid-image')
+    expect(data.title).toBe('')
+    expect(data.description).toBe('')
+    expect(data.background).toBe(false)
+    expect(data.sectionId).toBe('')
+  })
+
+  it('should map image grid with data', () => {
+    const data = mapImageGrid({
+      __component: 'section.section-grid-image',
+      id: 4,
+      title: '',
+      description: '',
+      image_grid: [
+        {
+          alternativeText: 'abc',
+          caption: null,
+          width: 1030,
+          height: 730,
+          formats: null,
+          hash: 'imagem_3ed0595e1b',
+          ext: '.svg',
+          mime: 'image/svg+xml',
+          size: 30.31,
+          url: 'a.svg',
+          previewUrl: null,
+          provider: 'cloudinary',
+          provider_metadata: {
+            public_id: 'imagem_3ed0595e1b',
+            resource_type: 'image',
+          },
+        },
+      ],
+    })
+
+    expect(data.component).toBe('section.section-grid-image')
+    expect(data.title).toBe('')
+    expect(data.description).toBe('')
+    expect(data.background).toBe(false)
+    expect(data.sectionId).toBe('')
+    expect(data.grid[0].srcImg).toBe('a.svg')
+    expect(data.grid[0].altText).toBe('abc')
+  })
+  // mapSectionContent final
+  it('should map sections content', () => {
+    const data = mapSectionContent({
+      title: '',
+      content: [{ children: [{ text: '' }] }],
+      metadata: {
+        background: false,
+        section_id: '',
+      },
+    })
+
+    expect(data.component).toBe('')
+    expect(data.title).toBe('')
+    expect(data.html).toBe('')
+    expect(data.background).toBe(false)
+    expect(data.sectionId).toBe('')
+  })
+
+  it('should map sections content with data', () => {
+    const data = mapSectionContent({
+      __component: 'section.section-content',
+      id: 3,
+      title: 'news coverage and some surprises',
+      content: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              text: 'abc',
+              type: 'text',
+            },
+          ],
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              text: '',
+              type: 'text',
+            },
+          ],
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              text: 'We’ll start with some background on the Mac transition and give an overview of Firefox internals that needed to know about the new architecture, before moving on to the concept of Universal Binaries.',
+              type: 'text',
+            },
+          ],
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              text: '',
+              type: 'text',
+            },
+          ],
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              text: 'abc.',
+              type: 'text',
+            },
+          ],
+        },
+      ],
+      metadata: {
+        id: 10,
+        name: 'intro',
+        section_id: 'intro',
+        background: false,
+      },
+    })
+
+    expect(data.component).toBe('section.section-content')
+    expect(data.title).toBe('news coverage and some surprises')
+    expect(data.html).toBe('abc')
+    expect(data.background).toBe(false)
+    expect(data.sectionId).toBe('intro')
   })
 })

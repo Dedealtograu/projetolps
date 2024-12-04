@@ -858,7 +858,11 @@ exports[`<Base /> should render Base 1`] = `
       >
         <div
           class="c15 c16"
-        />
+        >
+          <p>
+            Teste de Footer
+          </p>
+        </div>
       </div>
     </footer>
   </div>
