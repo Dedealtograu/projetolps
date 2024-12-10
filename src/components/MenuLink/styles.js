@@ -8,6 +8,7 @@ export const Container = styled.a`
     padding: ${theme.spacings.small};
     color: ${theme.colors.primaryColor};
     position: relative;
+    cursor: pointer;
 
     &::after {
       content: '';

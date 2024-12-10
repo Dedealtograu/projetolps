@@ -7,7 +7,7 @@ export const Container = styled.a`
     color: ${theme.colors.primaryColor};
 
     > img {
-      max-height: 3rem;
+      height: 3rem;
     }
   `}
 `

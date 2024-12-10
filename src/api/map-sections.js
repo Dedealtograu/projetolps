@@ -1,5 +1,6 @@
 export const mapSections = (sections = []) => {
   return sections.map((section) => {
+    //console.log(section)
     if (section.__component === 'section.section-two-columns') {
       mapSectionTwoColumns(section)
     }
@@ -95,6 +96,7 @@ export const mapImageGrid = (section = {}) => {
 }
 
 export const mapSectionContent = (section = {}) => {
+  //console.log(section.content)
   const {
     __component: component = '',
     title = '',
@@ -105,7 +107,7 @@ export const mapSectionContent = (section = {}) => {
     ] = [],
     metadata: { background = false, section_id: sectionId = '' } = false,
   } = section
-
+  //console.log(html)
   return {
     component,
     title,

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { Base } from '../Base'
-//import { mockBase } from '../Base/mock'
 import { mapData } from '../../api/map-data'
 import { PageNotFoud } from '../PageNotFoud'
 import { Loading } from '../Loading'
@@ -20,8 +19,9 @@ function Home() {
       )
       const json = await data.json()
       const attributes = json.data[0]
+      //console.log(attributes)
       const pageData = mapData([attributes])
-
+      //console.log(pageData)
       setData(() => pageData[0])
     }
 

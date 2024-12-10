@@ -4,9 +4,9 @@ import { SectionBackground } from '../SectionBackground'
 import { Heading } from '../Heading'
 import { TextComponent } from '../TextComponent'
 // eslint-disable-next-line
-export const GridImage = ({ title, description, grid, background = false }) => {
+export const GridImage = ({ title, description, grid, background = false, sectionId = '' }) => {
   return (
-    <SectionBackground background={background}>
+    <SectionBackground background={background} sectionId={sectionId}>
       <styled.Container>
         <Heading upperCase colorDark={!background} as="h2">
           {title}
@@ -34,4 +34,5 @@ GridImage.propTypes = {
       srcImg: P.string.isRequired,
     }),
   ).isRequired,
+  sectionId: P.string,
 }

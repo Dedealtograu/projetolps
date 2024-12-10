@@ -5,7 +5,11 @@ export const mapMenu = (menu = {}) => {
     logo_link: link = '',
     logo: { url: srcImg = '' } = '',
     menu_links: menu_links,
-  } = menu
+  } = menu[0]
+
+  //const srcImg = menu[0].logo && menu[0].logo.url ? menu[0].logo.url : ''
+
+  //console.log(srcImg)
 
   return {
     newTab,
